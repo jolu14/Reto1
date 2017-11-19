@@ -11,13 +11,19 @@ public class GameController : MonoBehaviour {
 	public Text txtTomb;
 	public Text txtPause;
 
+	public Image heart1, heart2, heart3, heart4, heart5, heart6, heart7, heart8, heart9, heart10;
+
+	
+
 	private static Text txtScoreS;
 	private static Text txtLiveS;
 	private static Text txtTombS;
 
 	private static int intScore;
 	private static int intTomb;
-	public static int intLives = 15;
+	public static int intLives = 10;
+
+	public int temporal;
 
 	private bool boolGamePause;
 	// Use this for initialization
@@ -28,6 +34,13 @@ public class GameController : MonoBehaviour {
 		txtLiveS = txtLive;
 		intScore = 0;
 		txtTombS = txtTomb;
+
+		heart10.enabled = true;
+		
+
+
+		
+
 	}
 	
 	// Update is called once per frame
@@ -66,7 +79,152 @@ public class GameController : MonoBehaviour {
 			}
 		}
 
+		temporal = intLives;
 
+		if(this.temporal == 9){
+			heart1.enabled = true;
+			heart2.enabled = true;
+			heart3.enabled = true;
+			heart4.enabled = true;
+			heart5.enabled = true;
+			heart6.enabled = true;
+			heart7.enabled = true;
+			heart8.enabled = true;
+			heart9.enabled = true;
+			heart10.enabled = false;
+			}
+			else
+			if(this.temporal == 8){
+			heart1.enabled = true;
+			heart2.enabled = true;
+			heart3.enabled = true;
+			heart4.enabled = true;
+			heart5.enabled = true;
+			heart6.enabled = true;
+			heart7.enabled = true;
+			heart8.enabled = true;
+			heart9.enabled = false;
+			heart10.enabled = false;
+
+			}
+			else
+			if(this.temporal == 7){
+			heart1.enabled = true;
+			heart2.enabled = true;
+			heart3.enabled = true;
+			heart4.enabled = true;
+			heart5.enabled = true;
+			heart6.enabled = true;
+			heart7.enabled = true;
+			heart8.enabled = false;
+			heart9.enabled = false;
+			heart10.enabled = false;
+
+			}
+			else
+			if(this.temporal == 6){
+			heart1.enabled = true;
+			heart2.enabled = true;
+			heart3.enabled = true;
+			heart4.enabled = true;
+			heart5.enabled = true;
+			heart6.enabled = true;
+			heart7.enabled = false;
+			heart8.enabled = false;
+			heart9.enabled = false;
+			heart10.enabled = false;
+
+			}
+			else
+			if(this.temporal == 5){
+			heart1.enabled = true;
+			heart2.enabled = true;
+			heart3.enabled = true;
+			heart4.enabled = true;
+			heart5.enabled = true;
+			heart6.enabled = false;
+			heart7.enabled = false;
+			heart8.enabled = false;
+			heart9.enabled = false;
+			heart10.enabled = false;
+
+			}
+			else
+			if(this.temporal == 4){
+			heart1.enabled = true;
+			heart2.enabled = true;
+			heart3.enabled = true;
+			heart4.enabled = true;
+			heart5.enabled = false;
+			heart6.enabled = false;
+			heart7.enabled = false;
+			heart8.enabled = false;
+			heart9.enabled = false;
+			heart10.enabled = false;
+
+			}
+			else
+			if(this.temporal == 3){
+			heart1.enabled = true;
+			heart2.enabled = true;
+			heart3.enabled = true;
+			heart4.enabled = false;
+			heart5.enabled = false;
+			heart6.enabled = false;
+			heart7.enabled = false;
+			heart8.enabled = false;
+			heart9.enabled = false;
+			heart10.enabled = false;
+
+			}
+			else
+			if(this.temporal == 2){
+			heart1.enabled = true;
+			heart2.enabled = true;
+			heart3.enabled = false;
+			heart4.enabled = false;
+			heart5.enabled = false;
+			heart6.enabled = false;
+			heart7.enabled = false;
+			heart8.enabled = false;
+			heart9.enabled = false;
+			heart10.enabled = false;
+
+			}
+			else
+			if(this.temporal == 1){
+			heart1.enabled = true;
+			heart2.enabled = false;
+			heart3.enabled = false;
+			heart4.enabled = false;
+			heart5.enabled = false;
+			heart6.enabled = false;
+			heart7.enabled = false;
+			heart8.enabled = false;
+			heart9.enabled = false;
+			heart10.enabled = false;
+
+			}
+			else
+			if(this.temporal == 0){
+			heart1.enabled = false;
+			heart2.enabled = false;
+			heart3.enabled = false;
+			heart4.enabled = false;
+			heart5.enabled = false;
+			heart6.enabled = false;
+			heart7.enabled = false;
+			heart8.enabled = false;
+			heart9.enabled = false;
+			heart10.enabled = false;
+
+			}
+		
+	
+
+
+		
+		 	
 	}
 
 	public static void subAddScore(int intScore_I){
@@ -80,13 +238,18 @@ public class GameController : MonoBehaviour {
 	}
 
 	public static void subHitPlayer(int intLives_I){
+
 		intLives -= intLives_I;
 		string strLives = "";
+		
 
+		
 		for (int intX = 0; intX < intLives; intX++ ){
 			strLives += "-";
 		}
 
 		txtLiveS.text = "Live " + strLives;
 	}
+
+
 }

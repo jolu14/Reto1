@@ -5,15 +5,33 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
+	public GameObject Arma2;
+	public GameObject Arma1;
+
+
+
 	public Text txtDanger;
+
+
 	float fHit = 0.0f;
 	// Use this for initialization
 	void Start () {
 		txtDanger.enabled = false;
+		Arma2.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetButton ("2")) {
+			Arma2.SetActive(true);
+			Arma1.SetActive(false);	
+		}
+		else
+		if(Input.GetButton ("1")){
+			Arma2.SetActive(false);
+			Arma1.SetActive(true);		
+		}
 		
 	}
 
